@@ -7,7 +7,10 @@ public class SelectionSort {
         int[] arr = {12, 5, 8, 16, 2, 9};
         selectionSort(arr);
         System.out.println(Arrays.toString(arr));
-        int a =10;
+
+        arr = new int[]{12, 5, 8, 16, 2, 9};
+        selectionSortRe(arr, 0, 0, arr.length - 1);
+        System.out.println(Arrays.toString(arr));
     }
 
     private static void selectionSort(int[] arr) {
@@ -22,6 +25,23 @@ public class SelectionSort {
                 arr[maxIndex] = arr[lastIndex] - arr[maxIndex];
                 arr[lastIndex] = arr[lastIndex] - arr[maxIndex];
             }
+        }
+    }
+
+    private static void selectionSortRe(int[] arr, int maxIndex, int curIndex, int lastIndex) {
+        if (lastIndex == 0) return;
+
+        if (curIndex <= lastIndex) {
+            if (arr[curIndex] > arr[maxIndex])
+                maxIndex = curIndex;
+            selectionSortRe(arr, maxIndex, curIndex + 1, lastIndex);
+        } else {
+            if (maxIndex != lastIndex) {
+                arr[lastIndex] = arr[maxIndex] + arr[lastIndex];
+                arr[maxIndex] = arr[lastIndex] - arr[maxIndex];
+                arr[lastIndex] = arr[lastIndex] - arr[maxIndex];
+            }
+            selectionSortRe(arr, 0, 0, lastIndex - 1);
         }
     }
 }
