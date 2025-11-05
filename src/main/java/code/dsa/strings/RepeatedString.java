@@ -1,4 +1,4 @@
-package code.dsa;
+package code.dsa.strings;
 
 
 // https://www.hackerrank.com/challenges/repeated-string/problem?isFullScreen=true
