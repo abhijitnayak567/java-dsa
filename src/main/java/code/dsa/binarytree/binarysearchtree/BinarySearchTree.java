@@ -2,6 +2,10 @@ package code.dsa.binarytree.binarysearchtree;
 
 import code.dsa.binarytree.BinaryTreeNode;
 
+/**
+ *
+ * read about AVL Trees and Red Black trees
+ */
 public class BinarySearchTree<T extends Number & Comparable<T>> {
     public BinaryTreeNode<T> root;
     public int size;
